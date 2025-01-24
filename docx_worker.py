@@ -1,5 +1,6 @@
 ﻿from docx import Document
 from docx.shared import Inches
+import json
 import os
 
 def docx_fixer(file=None):
