@@ -7,7 +7,7 @@ import json
 class MainWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('data/main.ui', self)
+        uic.loadUi('data//main.ui', self)
         self.text_success.hide()
         self.text_error.hide()
         self.btn_save.clicked.connect(self.save)
@@ -29,5 +29,6 @@ class MainWidget(QMainWindow):
         
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    MainWidget().show()
+    wid = MainWidget()
+    wid.show()
     sys.exit(app.exec())
