@@ -1,6 +1,6 @@
 ﻿import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPlainTextEdit
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPlainTextEdit, QComboBox
 import docx_worker
 import json
 import os
@@ -16,37 +16,42 @@ class MainWidget(QMainWindow):
         os.chdir('data')
         with open('data.json', 'r', encoding='utf-8') as file:
             text = ''.join(file.readlines())[1:]
-            data = json.loads(text)
+            self.data = json.loads(text)
         os.chdir('../docs_for_test')
         for file in os.listdir():
             self.box_filename.addItem(file)
-        self.box_filetype.setCurrentText(data['filetype'])
-        self.input_teacher.appendPlainText(data['teacher'])
-        self.edgewall_up.setValue(data['edge-wall']['top'])
-        self.edgewall_bottom.setValue(data['edge-wall']['bottom'])
-        self.edgewall_left.setValue(data['edge-wall']['left'])
-        self.edgewall_right.setValue(data['edge-wall']['right'])
-        self.walltext_up.setValue(data['wall-text']['top'])
-        self.walltext_bottom.setValue(data['wall-text']['bottom'])
-        self.walltext_left.setValue(data['wall-text']['left'])
-        self.walltext_right.setValue(data['wall-text']['right'])
-        self.fontsize.setValue(data['font-size'])
-        self.rows_distance.setValue(data['rows_distance'])
-        self.first_void.setValue(data['first_void'])
+        self.box_filetype.setCurrentText(self.data['filetype'])
+        self.input_teacher.appendPlainText(self.data['teacher'])
+        self.edgewall_up.setValue(self.data['edge-wall']['top'])
+        self.edgewall_bottom.setValue(self.data['edge-wall']['bottom'])
+        self.edgewall_left.setValue(self.data['edge-wall']['left'])
+        self.edgewall_right.setValue(self.data['edge-wall']['right'])
+        self.walltext_up.setValue(self.data['wall-text']['top'])
+        self.walltext_bottom.setValue(self.data['wall-text']['bottom'])
+        self.walltext_left.setValue(self.data['wall-text']['left'])
+        self.walltext_right.setValue(self.data['wall-text']['right'])
+        self.fontsize.setValue(self.data['font-size'])
+        self.rows_distance.setValue(self.data['rows_distance'])
+        self.first_void.setValue(self.data['first_void'])
 
     def update(self):
         self.close()
+        self.text_error.hide()
+        self.text_success.hide()
         self.show()
         
     def save(self):
-        print(self.edgewall_up.value())
-        print(self.box_filename.currentText())
+        self.data['filetype'] = self.box_filetype.currentText()
+        self.data['teacher'] = self.input_teacher.toPlainText()
+        self.data['edge-wall']['top'] = self.edgewall_up.value()
+        print(self.data)
     
     def load(self):
         try:
-            pass
+            docx_worker.docx_fixer()
         except Exception as ex:
             print(ex)
+            self.update()
             self.text_error.show()
         
 if __name__ == '__main__':
