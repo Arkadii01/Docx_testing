@@ -1,6 +1,6 @@
-﻿{
-  "filetype": "Отчет",
-  "filename": "",
+{
+  "filetype": "Доклад",
+  "filename": "Новый",
   "teacher": "О. О. Клеверна",
   "edge-wall": {
     "left": 0,
@@ -15,6 +15,6 @@
     "bottom": 0
   },
   "font-size": 14,
-  "rows_distance": 1.5,
+  "rows_distance": 2.0,
   "first_void": 1.5
 }

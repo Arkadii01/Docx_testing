@@ -15,11 +15,11 @@ class MainWidget(QMainWindow):
         self.btn_load.clicked.connect(self.load)
         os.chdir('data')
         with open('data.json', 'r', encoding='utf-8') as file:
-            text = ''.join(file.readlines())[1:]
-            self.data = json.loads(text)
+            self.data = json.load(file)
         os.chdir('../docs_for_test')
         for file in os.listdir():
             self.box_filename.addItem(file)
+        os.chdir('..')
         self.box_filetype.setCurrentText(self.data['filetype'])
         self.input_teacher.appendPlainText(self.data['teacher'])
         self.edgewall_up.setValue(self.data['edge-wall']['top'])
@@ -42,9 +42,24 @@ class MainWidget(QMainWindow):
         
     def save(self):
         self.data['filetype'] = self.box_filetype.currentText()
+        self.data['filename'] = self.box_filename.currentText()
         self.data['teacher'] = self.input_teacher.toPlainText()
         self.data['edge-wall']['top'] = self.edgewall_up.value()
+        self.data['edge-wall']['left'] = self.edgewall_left.value()
+        self.data['edge-wall']['right'] = self.edgewall_right.value()
+        self.data['edge-wall']['bottom'] = self.edgewall_bottom.value()
+        self.data['wall-text']['top'] = self.walltext_up.value()
+        self.data['wall-text']['left'] = self.walltext_left.value()
+        self.data['wall-text']['right'] = self.walltext_right.value()
+        self.data['wall-text']['bottom'] = self.walltext_bottom.value()
+        self.data['font-size'] = self.fontsize.value()
+        self.data['rows_distance'] = self.rows_distance.value()
+        self.data['first_void'] = self.first_void.value()
         print(self.data)
+        os.chdir('data')
+        with open('data.json', 'w', encoding='utf-8') as file:
+            json.dump(self.data, file, ensure_ascii=False, indent='  ')
+        os.chdir('..')
     
     def load(self):
         try:
