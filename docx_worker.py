@@ -6,8 +6,7 @@ import os
 def docx_fixer():
     os.chdir('data')
     with open('data.json', 'r', encoding='utf-8') as file:
-        text = ''.join(file.readlines())[1:]
-        data = json.loads(text)
+        data = json.load(file)
     os.chdir('../docs_for_test')
     if file == None:
         doc = Document()
