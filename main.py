@@ -1,6 +1,6 @@
 ﻿import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPlainTextEdit, QComboBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPlainTextEdit
 import docx_worker
 import json
 import os
@@ -11,7 +11,11 @@ class MainWidget(QMainWindow):
         uic.loadUi('data//main.ui', self)
         self.text_success.hide()
         self.text_error.hide()
-        self.btn_save.clicked.connect(self.save)
+        self.btn_main.clicked.connect(self.get_main)
+        self.btn_text.clicked.connect(self.get_text)
+        self.btn_void.clicked.connect(self.get_void)
+        self.btn_element.clicked.connect(self.get_element)
+        self.btn_content.clicked.connect(self.get_content)
         self.btn_load.clicked.connect(self.load)
         os.chdir('data')
         with open('data.json', 'r', encoding='utf-8') as file:
@@ -38,6 +42,19 @@ class MainWidget(QMainWindow):
         self.close()
         self.text_error.hide()
         self.text_success.hide()
+        self.show()
+        
+    def get_main(self):
+        pass
+    
+    def get_main(self):
+        self.close()
+        uic.loadUi('data//main.ui')
+        self.show()
+
+    def get_text(self):
+        self.close()
+        uic.loadUi('data//main.ui')
         self.show()
         
     def save(self):
