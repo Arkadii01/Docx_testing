@@ -6,80 +6,62 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
-    <height>977</height>
+    <width>496</width>
+    <height>792</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>6</x>
-      <y>6</y>
-      <width>300</width>
-      <height>618</height>
+      <x>50</x>
+      <y>360</y>
+      <width>361</width>
+      <height>82</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="Line" name="line_4">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="4">
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="styleSheet">
+        <string notr="true">background-color: lightgray;</string>
+       </property>
+       <property name="text">
+        <string>Содержание</string>
        </property>
       </widget>
      </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QPushButton" name="pushButton_4">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>Основное</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>Текст</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="text">
-          <string>Отступы</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>Элементы</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="styleSheet">
-          <string notr="true">background-color: lightgray;</string>
-         </property>
-         <property name="text">
-          <string>Содержание</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Элементы</string>
+       </property>
+      </widget>
      </item>
-     <item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Отступы</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Основное</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="5">
       <widget class="QPushButton" name="btn_load">
        <property name="maximumSize">
         <size>
@@ -97,7 +79,14 @@
        </property>
       </widget>
      </item>
-     <item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Текст</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
       <widget class="QLabel" name="text_error">
        <property name="maximumSize">
         <size>
@@ -118,7 +107,7 @@
        </property>
       </widget>
      </item>
-     <item>
+     <item row="3" column="0">
       <widget class="QLabel" name="text_success">
        <property name="maximumSize">
         <size>
@@ -148,7 +137,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>644</width>
+     <width>496</width>
      <height>18</height>
     </rect>
    </property>
