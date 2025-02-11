@@ -6,26 +6,47 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
-    <height>977</height>
+    <width>526</width>
+    <height>757</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>6</x>
-      <y>6</y>
-      <width>300</width>
-      <height>618</height>
+      <x>50</x>
+      <y>300</y>
+      <width>417</width>
+      <height>252</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="text_filename">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="7" column="1">
+      <widget class="QPushButton" name="btn_text">
+       <property name="text">
+        <string>Текст</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QPushButton" name="btn_void">
+       <property name="text">
+        <string>Отступы</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="3">
+      <widget class="QPushButton" name="btn_element">
+       <property name="text">
+        <string>Элементы</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0" colspan="5">
+      <widget class="QPushButton" name="btn_load">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -38,29 +59,51 @@
         </font>
        </property>
        <property name="text">
-        <string>Название документа</string>
+        <string>Запустить </string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QComboBox" name="box_filename">
+     <item row="7" column="4">
+      <widget class="QPushButton" name="btn_content">
+       <property name="text">
+        <string>Содержание</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QPushButton" name="btn_main">
+       <property name="styleSheet">
+        <string notr="true">background-color: lightgray;</string>
+       </property>
+       <property name="text">
+        <string>Основное</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="text_success">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <pointsize>12</pointsize>
         </font>
        </property>
-       <item>
-        <property name="text">
-         <string>Новый</string>
-        </property>
-       </item>
+       <property name="styleSheet">
+        <string notr="true">color: green;
+</string>
+       </property>
+       <property name="text">
+        <string>Документ исправлен!</string>
+       </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="text_filetype">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_15">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -72,12 +115,49 @@
          <pointsize>12</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
-        <string>Тип документа</string>
+        <string>Препадователь</string>
        </property>
       </widget>
      </item>
-     <item>
+     <item row="6" column="0" colspan="4">
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QPlainTextEdit" name="input_teacher">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>54</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="documentTitle">
+        <string/>
+       </property>
+       <property name="plainText">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
       <widget class="QComboBox" name="box_filetype">
        <property name="font">
         <font>
@@ -116,122 +196,7 @@
        </item>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="label_15">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>Препадователь</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="input_teacher">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>54</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="documentTitle">
-        <string/>
-       </property>
-       <property name="plainText">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="Line" name="line_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QPushButton" name="btn_main">
-         <property name="styleSheet">
-          <string notr="true">background-color: lightgray;</string>
-         </property>
-         <property name="text">
-          <string>Основное</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_text">
-         <property name="text">
-          <string>Текст</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_void">
-         <property name="text">
-          <string>Отступы</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_element">
-         <property name="text">
-          <string>Элементы</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_content">
-         <property name="text">
-          <string>Содержание</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_load">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Запустить </string>
-       </property>
-      </widget>
-     </item>
-     <item>
+     <item row="10" column="0">
       <widget class="QLabel" name="text_error">
        <property name="maximumSize">
         <size>
@@ -252,12 +217,29 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QLabel" name="text_success">
+     <item row="1" column="0">
+      <widget class="QComboBox" name="box_filename">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <item>
+        <property name="text">
+         <string>Новый</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="text_filetype">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>15</height>
+         <height>16777215</height>
         </size>
        </property>
        <property name="font">
@@ -265,12 +247,26 @@
          <pointsize>12</pointsize>
         </font>
        </property>
-       <property name="styleSheet">
-        <string notr="true">color: green;
-</string>
+       <property name="text">
+        <string>Тип документа</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="text_filename">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="text">
-        <string>Документ исправлен!</string>
+        <string>Название документа</string>
        </property>
       </widget>
      </item>
@@ -282,7 +278,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>644</width>
+     <width>526</width>
      <height>18</height>
     </rect>
    </property>
